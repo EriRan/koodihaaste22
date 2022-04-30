@@ -1,9 +1,12 @@
 // Redux store
 
 import { configureStore } from '@reduxjs/toolkit'
+import restaurantSlice from './state/restaurantSlice'
 
 const store = configureStore({
-  reducer: {},
+  reducer: {
+    restaurant: restaurantSlice
+  },
 })
 
 export type RootState = ReturnType<typeof store.getState>

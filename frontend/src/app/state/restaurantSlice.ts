@@ -2,8 +2,9 @@
  * Slice of restaurant state
  */
 
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RestaurantResponse } from '../model/restaurantResponse.model'
+import { RootState } from '../store'
 
 interface RestaurantState {
   restaurantResponse?: RestaurantResponse
@@ -17,5 +18,16 @@ const initialState: RestaurantState = {
 export const restaurantSlice = createSlice({
   name: 'restaurant',
   initialState,
-  reducers: {},
+  reducers: {
+    loadData: (state, action: PayloadAction<RestaurantResponse>) => {
+      state.restaurantResponse = action.payload
+    },
+  },
 })
+
+export const { loadData } = restaurantSlice.actions
+
+export const selectRestaurantResponse = (state: RootState) =>
+  state.restaurant.restaurantResponse
+
+export default restaurantSlice.reducer
