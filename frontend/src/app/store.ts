@@ -3,9 +3,9 @@
 import { configureStore } from '@reduxjs/toolkit'
 import restaurantSlice from './state/restaurantSlice'
 
-const store = configureStore({
+export const store = configureStore({
   reducer: {
-    restaurant: restaurantSlice
+    restaurant: restaurantSlice,
   },
 })
 
