@@ -5,6 +5,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RestaurantResponse } from '../model/restaurantResponse.model'
 import { RootState } from '../store'
+import { getRestaurantResponse } from './restaurantThunk'
 
 interface RestaurantState {
   restaurantResponse?: RestaurantResponse
@@ -15,6 +16,7 @@ const initialState: RestaurantState = {
   restaurantResponse: undefined,
 }
 
+// Slice
 export const restaurantSlice = createSlice({
   name: 'restaurant',
   initialState,
@@ -22,6 +24,11 @@ export const restaurantSlice = createSlice({
     loadData: (state, action: PayloadAction<RestaurantResponse>) => {
       state.restaurantResponse = action.payload
     },
+  },
+  extraReducers: builder => {
+    builder.addCase(getRestaurantResponse.fulfilled, (state, action) => {
+      state.restaurantResponse = action.payload
+    })
   },
 })
 
