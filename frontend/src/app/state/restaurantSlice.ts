@@ -8,11 +8,13 @@ import { RootState } from '../store'
 import { getRestaurantResponse } from './restaurantThunk'
 
 interface RestaurantState {
+  citySearchQuery?: string
   restaurantResponse?: RestaurantResponse
 }
 
 // Initially undefined. Will be loaded once the first API call is succesful
 const initialState: RestaurantState = {
+  citySearchQuery: undefined,
   restaurantResponse: undefined,
 }
 
@@ -21,8 +23,8 @@ export const restaurantSlice = createSlice({
   name: 'restaurant',
   initialState,
   reducers: {
-    loadData: (state, action: PayloadAction<RestaurantResponse>) => {
-      state.restaurantResponse = action.payload
+    changeSearchQuery: (state, action: PayloadAction<string>) => {
+      state.citySearchQuery = action.payload
     },
   },
   extraReducers: builder => {
@@ -32,9 +34,12 @@ export const restaurantSlice = createSlice({
   },
 })
 
-export const { loadData } = restaurantSlice.actions
+export const { changeSearchQuery } = restaurantSlice.actions
 
 export const selectRestaurantResponse = (state: RootState) =>
   state.restaurant.restaurantResponse
+
+export const selectCitySearchQuery = (state: RootState) =>
+  state.restaurant.citySearchQuery
 
 export default restaurantSlice.reducer
