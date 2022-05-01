@@ -7,9 +7,9 @@ export function RestaurantView() {
   const restaurantsJsx = restaurantResponse?.restaurants.map(restaurant => {
     return (
       <div id={`restaurant-${restaurant.id}`}>
-        <p>{restaurant.name}</p>
-        <p>{restaurant.openingHours}</p>
-        <p>{restaurant.votes}</p>
+        <p>Name: {restaurant.name}</p>
+        <p>Opening hours: {restaurant.openingHours}</p>
+        <p>Votes: {restaurant.votes}</p>
       </div>
     )
   })
