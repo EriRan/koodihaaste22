@@ -49,7 +49,14 @@
         "ts": "never",
         "tsx": "never"
       }
-    ]
+    ],
+    // Redux toolkit allows mutating state during createSlice
+    "no-param-reassign": ["error", {
+      "props": true,
+      "ignorePropertyModificationsFor": [
+        "state"
+      ]
+    }]
   },
   "settings": {
     "import/resolver": {
