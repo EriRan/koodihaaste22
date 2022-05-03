@@ -1,18 +1,12 @@
-import { AppBar, Box, Toolbar, Typography } from '@mui/material'
+import { AppBar, Box, Toolbar } from '@mui/material'
+import { LounasVoteLogo } from './LounasVoteLogo'
 
 export function LounasVoteAppBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed">
         <Toolbar>
-          <Typography
-            variant="h3"
-            align="left"
-            component="div"
-            sx={{ flexGrow: 1 }}
-          >
-            LounasVote
-          </Typography>
+          <LounasVoteLogo />
         </Toolbar>
       </AppBar>
     </Box>
