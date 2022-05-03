@@ -3,10 +3,10 @@ import { AppBar, Box, Toolbar, Typography } from '@mui/material'
 export function LounasVoteAppBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar>
           <Typography
-            variant="h6"
+            variant="h3"
             align="center"
             component="div"
             sx={{ flexGrow: 1 }}
