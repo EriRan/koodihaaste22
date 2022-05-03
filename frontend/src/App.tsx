@@ -1,6 +1,6 @@
 import { Provider } from 'react-redux'
 import { store } from './app/store'
-import { LounasVoteAppBar } from './components/LounasVoteAppBar'
+import { LounasVoteAppBar } from './components/header/LounasVoteAppBar'
 import { CityInput } from './components/CityInput'
 import { RestaurantView } from './components/RestaurantView'
 
