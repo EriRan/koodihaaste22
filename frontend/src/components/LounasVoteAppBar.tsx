@@ -7,7 +7,7 @@ export function LounasVoteAppBar() {
         <Toolbar>
           <Typography
             variant="h3"
-            align="center"
+            align="left"
             component="div"
             sx={{ flexGrow: 1 }}
           >
