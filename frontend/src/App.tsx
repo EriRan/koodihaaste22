@@ -1,13 +1,13 @@
 import { Provider } from 'react-redux'
 import { store } from './app/store'
-import { AppBarCustom } from './components/AppBarCustom'
+import { LounasVoteAppBar } from './components/LounasVoteAppBar'
 import { CityInput } from './components/CityInput'
 import { RestaurantView } from './components/RestaurantView'
 
 export function App() {
   return (
     <Provider store={store}>
-      <AppBarCustom />
+      <LounasVoteAppBar />
       <CityInput />
       <RestaurantView />
     </Provider>

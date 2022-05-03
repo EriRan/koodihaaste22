@@ -1,6 +1,6 @@
 import { AppBar, Box, Toolbar, Typography } from '@mui/material'
 
-export function AppBarCustom() {
+export function LounasVoteAppBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
