@@ -2,6 +2,10 @@ import { Box, IconButton, Menu, MenuItem, Typography } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import React from 'react'
 
+/**
+ * Secondary buttons of the header. These would be used less commonly
+ * @returns functional component
+ */
 export function AppBarSecondaryButtons() {
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
     null,
