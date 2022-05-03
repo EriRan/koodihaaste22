@@ -1,4 +1,5 @@
-import { AppBar, Box, Toolbar } from '@mui/material'
+import { AppBar, Box, Container, Toolbar } from '@mui/material'
+import { AppBarButtons } from './AppBarButtons'
 import { LounasVoteLogo } from './LounasVoteLogo'
 
 export function LounasVoteAppBar() {
@@ -7,6 +8,7 @@ export function LounasVoteAppBar() {
       <AppBar position="fixed">
         <Toolbar>
           <LounasVoteLogo />
+          <AppBarButtons />
         </Toolbar>
       </AppBar>
     </Box>
