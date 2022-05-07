@@ -10,11 +10,11 @@ export function AppBarSecondaryButtons() {
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
     null,
   )
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
+  const handleOpenArchiveMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElUser(event.currentTarget)
   }
 
-  const handleCloseUserMenu = () => {
+  const handleCloseArchiveMenu = () => {
     setAnchorElUser(null)
   }
 
@@ -25,7 +25,7 @@ export function AppBarSecondaryButtons() {
         aria-label="account of current user"
         aria-controls="menu-appbar"
         aria-haspopup="true"
-        onClick={handleOpenUserMenu}
+        onClick={handleOpenArchiveMenu}
         color="inherit"
       >
         <MenuIcon />
@@ -44,9 +44,9 @@ export function AppBarSecondaryButtons() {
           horizontal: 'right',
         }}
         open={Boolean(anchorElUser)}
-        onClose={handleCloseUserMenu}
+        onClose={handleCloseArchiveMenu}
       >
-        <MenuItem onClick={handleCloseUserMenu}>
+        <MenuItem onClick={handleCloseArchiveMenu}>
           <Typography textAlign="center">Arkisto</Typography>
         </MenuItem>
       </Menu>
