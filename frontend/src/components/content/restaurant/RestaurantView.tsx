@@ -1,15 +1,10 @@
-import { Box, Card, CardContent, Grid, Typography } from '@mui/material'
+import { Box, Card, CardContent, Typography } from '@mui/material'
 import { useAppSelector } from 'src/app/hooks'
 import { selectRestaurantResponse } from 'src/app/state/restaurant/restaurantSlice'
-import AccessTimeIcon from '@mui/icons-material/AccessTime'
+import { OpeningHoursGrid } from './OpeningHoursGrid'
 
 export function RestaurantView() {
   const restaurantResponse = useAppSelector(selectRestaurantResponse)
-
-  const formatOpeningHours = (openingHours: string) => {
-    const trimmedString = openingHours.trim()
-    return trimmedString.length > 0 ? trimmedString : 'Kiinni'
-  }
 
   const restaurantsJsx = restaurantResponse?.restaurants.map(restaurant => {
     return (
@@ -18,12 +13,7 @@ export function RestaurantView() {
           <Typography variant="h4" id={`restaurant-${restaurant.id}-name`}>
             {restaurant.name}
           </Typography>
-          <Grid container>
-            <AccessTimeIcon />
-            <Typography>
-              {formatOpeningHours(restaurant.openingHours)}
-            </Typography>
-          </Grid>
+          <OpeningHoursGrid openingHours={restaurant.openingHours} />
           <Typography>Ääniä: {restaurant.votes}</Typography>
         </CardContent>
       </Card>
