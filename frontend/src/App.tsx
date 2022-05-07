@@ -1,3 +1,4 @@
+import { Container } from '@mui/material'
 import { Provider } from 'react-redux'
 import { store } from './app/store'
 import { LounasVoteAppBar } from './components/header/LounasVoteAppBar'
@@ -8,8 +9,10 @@ export function App() {
   return (
     <Provider store={store}>
       <LounasVoteAppBar />
-      <CityInput />
-      <RestaurantView />
+      <Container>
+        <CityInput />
+        <RestaurantView />
+      </Container>
     </Provider>
   )
 }

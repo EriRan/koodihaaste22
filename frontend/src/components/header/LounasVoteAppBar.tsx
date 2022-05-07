@@ -5,8 +5,8 @@ import { LounasVoteLogo } from './LounasVoteLogo'
 
 export function LounasVoteAppBar() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed">
+    <Box>
+      <AppBar position="relative">
         <Toolbar>
           <LounasVoteLogo />
           <AppBarPrimaryButtons />
