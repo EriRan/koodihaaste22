@@ -3,8 +3,8 @@
  */
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import axios, { AxiosError } from 'axios'
-import { RestaurantResponse } from '../model/RestaurantResponse.model'
-import { RootState } from '../store'
+import { RestaurantResponse } from 'src/app/model/RestaurantResponse.model'
+import { RootState } from 'src/app/store'
 
 export const getRestaurantResponse = createAsyncThunk<
   RestaurantResponse | undefined,

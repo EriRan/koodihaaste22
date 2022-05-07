@@ -1,6 +1,6 @@
 import { useAppDispatch } from 'src/app/hooks'
-import { getRestaurantResponse } from 'src/app/state/restaurantThunk'
-import { changeSearchQuery } from 'src/app/state/restaurantSlice'
+import { changeSearchQuery } from 'src/app/state/restaurant/restaurantSlice'
+import { getRestaurantResponse } from 'src/app/state/restaurant/restaurantThunk'
 
 export function CityInput() {
   const dispatch = useAppDispatch()

@@ -3,8 +3,8 @@
  */
 
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { RestaurantResponse } from '../model/RestaurantResponse.model'
-import { RootState } from '../store'
+import { RestaurantResponse } from '../../model/RestaurantResponse.model'
+import { RootState } from '../../store'
 import { getRestaurantResponse } from './restaurantThunk'
 
 interface RestaurantState {

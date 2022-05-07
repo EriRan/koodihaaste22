@@ -1,5 +1,5 @@
 import { useAppSelector } from 'src/app/hooks'
-import { selectRestaurantResponse } from 'src/app/state/restaurantSlice'
+import { selectRestaurantResponse } from 'src/app/state/restaurant/restaurantSlice'
 
 export function RestaurantView() {
   const restaurantResponse = useAppSelector(selectRestaurantResponse)
