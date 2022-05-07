@@ -6,6 +6,11 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime'
 export function RestaurantView() {
   const restaurantResponse = useAppSelector(selectRestaurantResponse)
 
+  const formatOpeningHours = (openingHours: string) => {
+    const trimmedString = openingHours.trim()
+    return trimmedString.length > 0 ? trimmedString : 'Kiinni'
+  }
+
   const restaurantsJsx = restaurantResponse?.restaurants.map(restaurant => {
     return (
       <Card id={`restaurant-${restaurant.id}`}>
@@ -15,12 +20,29 @@ export function RestaurantView() {
           </Typography>
           <Grid container>
             <AccessTimeIcon />
-            <Typography>{restaurant.openingHours.trim()}</Typography>
+            <Typography>
+              {formatOpeningHours(restaurant.openingHours)}
+            </Typography>
           </Grid>
-          <Typography>Votes: {restaurant.votes}</Typography>
+          <Typography>Ääniä: {restaurant.votes}</Typography>
         </CardContent>
       </Card>
     )
   })
-  return <Box>{restaurantsJsx}</Box>
+  if (!restaurantsJsx) {
+    return <div />
+  }
+  if (!restaurantsJsx || restaurantsJsx.length === 0) {
+    return (
+      <Box>
+        <Typography variant="h3">Ei tuloksia</Typography>
+      </Box>
+    )
+  }
+  return (
+    <Box>
+      <Typography variant="h3">Tulokset</Typography>
+      {restaurantsJsx}
+    </Box>
+  )
 }
