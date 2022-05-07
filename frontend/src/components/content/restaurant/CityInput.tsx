@@ -3,12 +3,19 @@ import { useAppDispatch } from 'src/app/hooks'
 import { changeSearchQuery } from 'src/app/state/restaurant/restaurantSlice'
 import { getRestaurantResponse } from 'src/app/state/restaurant/restaurantThunk'
 import SearchIcon from '@mui/icons-material/Search'
+import React from 'react'
 
 export function CityInput() {
   const dispatch = useAppDispatch()
 
   const loadRestaurants = () => {
     dispatch(getRestaurantResponse())
+  }
+
+  const handleOnKeyDown = (event: React.KeyboardEvent) => {
+    if (event.key === 'Enter') {
+      loadRestaurants()
+    }
   }
 
   return (
@@ -18,6 +25,7 @@ export function CityInput() {
         label="Kaupungin nimi..."
         variant="outlined"
         onChange={event => dispatch(changeSearchQuery(event.target.value))}
+        onKeyDown={handleOnKeyDown}
       />
       <IconButton
         size="large"
