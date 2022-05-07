@@ -1,7 +1,8 @@
-import { Button, TextField } from '@mui/material'
+import { IconButton, TextField } from '@mui/material'
 import { useAppDispatch } from 'src/app/hooks'
 import { changeSearchQuery } from 'src/app/state/restaurant/restaurantSlice'
 import { getRestaurantResponse } from 'src/app/state/restaurant/restaurantThunk'
+import SearchIcon from '@mui/icons-material/Search'
 
 export function CityInput() {
   const dispatch = useAppDispatch()
@@ -15,16 +16,19 @@ export function CityInput() {
       <TextField
         id="city-input"
         label="Kaupungin nimi..."
-        variant="standard"
+        variant="outlined"
         onChange={event => dispatch(changeSearchQuery(event.target.value))}
       />
-      <Button
-        id="city-input-button"
-        variant="contained"
+      <IconButton
+        size="large"
+        aria-label="account of current user"
+        aria-controls="menu-appbar"
+        aria-haspopup="true"
         onClick={loadRestaurants}
+        color="inherit"
       >
-        Hae
-      </Button>
+        <SearchIcon />
+      </IconButton>
     </div>
   )
 }
