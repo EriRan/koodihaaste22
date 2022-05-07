@@ -1,3 +1,4 @@
+import { Box } from '@mui/material'
 import { useAppSelector } from 'src/app/hooks'
 import { selectRestaurantResponse } from 'src/app/state/restaurant/restaurantSlice'
 
@@ -13,5 +14,5 @@ export function RestaurantView() {
       </div>
     )
   })
-  return <div>{restaurantsJsx}</div>
+  return <Box>{restaurantsJsx}</Box>
 }
