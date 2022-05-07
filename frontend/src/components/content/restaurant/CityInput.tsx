@@ -1,4 +1,4 @@
-import { IconButton, TextField } from '@mui/material'
+import { Grid, IconButton, TextField } from '@mui/material'
 import { useAppDispatch } from 'src/app/hooks'
 import { changeSearchQuery } from 'src/app/state/restaurant/restaurantSlice'
 import { getRestaurantResponse } from 'src/app/state/restaurant/restaurantThunk'
@@ -12,7 +12,7 @@ export function CityInput() {
   }
 
   return (
-    <div>
+    <Grid container>
       <TextField
         id="city-input"
         label="Kaupungin nimi..."
@@ -29,6 +29,6 @@ export function CityInput() {
       >
         <SearchIcon />
       </IconButton>
-    </div>
+    </Grid>
   )
 }
