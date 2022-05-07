@@ -7,15 +7,15 @@ import React from 'react'
  * @returns functional component
  */
 export function AppBarSecondaryButtons() {
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
-    null,
-  )
+  const [anchorArchiveMenu, setAnchorArchiveMenu] =
+    React.useState<null | HTMLElement>(null)
+
   const handleOpenArchiveMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget)
+    setAnchorArchiveMenu(event.currentTarget)
   }
 
   const handleCloseArchiveMenu = () => {
-    setAnchorElUser(null)
+    setAnchorArchiveMenu(null)
   }
 
   return (
@@ -33,7 +33,7 @@ export function AppBarSecondaryButtons() {
       <Menu
         sx={{ mt: '45px' }}
         id="menu-appbar"
-        anchorEl={anchorElUser}
+        anchorEl={anchorArchiveMenu}
         anchorOrigin={{
           vertical: 'top',
           horizontal: 'right',
@@ -43,7 +43,7 @@ export function AppBarSecondaryButtons() {
           vertical: 'top',
           horizontal: 'right',
         }}
-        open={Boolean(anchorElUser)}
+        open={Boolean(anchorArchiveMenu)}
         onClose={handleCloseArchiveMenu}
       >
         <MenuItem onClick={handleCloseArchiveMenu}>
