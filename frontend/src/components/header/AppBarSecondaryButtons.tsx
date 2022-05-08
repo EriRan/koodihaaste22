@@ -1,7 +1,7 @@
 import { Box, IconButton, Menu, MenuItem, Typography } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 /**
  * Secondary buttons of the header. These would be used less commonly
@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom'
  */
 export function AppBarSecondaryButtons() {
   const navigate = useNavigate()
+  const location = useLocation()
   const [anchorArchiveMenu, setAnchorArchiveMenu] =
     React.useState<null | HTMLElement>(null)
 
@@ -48,7 +49,10 @@ export function AppBarSecondaryButtons() {
         open={Boolean(anchorArchiveMenu)}
         onClose={handleCloseArchiveMenu}
       >
-        <MenuItem onClick={handleCloseArchiveMenu}>
+        <MenuItem
+          onClick={handleCloseArchiveMenu}
+          disabled={location.pathname === '/archive'}
+        >
           <Typography textAlign="center" onClick={() => navigate('/archive')}>
             Arkisto
           </Typography>
