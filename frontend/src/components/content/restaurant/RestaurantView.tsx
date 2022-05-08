@@ -13,8 +13,13 @@ export function RestaurantView() {
           <Typography variant="h4" id={`restaurant-${restaurant.id}-name`}>
             {restaurant.name}
           </Typography>
-          <OpeningHoursGrid openingHours={restaurant.openingHours} />
-          <Typography>Ääniä: {restaurant.votes}</Typography>
+          <OpeningHoursGrid
+            id={`restaurant-${restaurant.id}-votes`}
+            openingHours={restaurant.openingHours}
+          />
+          <Typography id={`restaurant-${restaurant.id}-votes`}>
+            Ääniä: {restaurant.votes}
+          </Typography>
         </CardContent>
       </Card>
     )
