@@ -1,6 +1,7 @@
 import { Box, IconButton, Menu, MenuItem, Typography } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 /**
  * Secondary buttons of the header. These would be used less commonly
@@ -47,7 +48,9 @@ export function AppBarSecondaryButtons() {
         onClose={handleCloseArchiveMenu}
       >
         <MenuItem onClick={handleCloseArchiveMenu}>
-          <Typography textAlign="center">Arkisto</Typography>
+          <Typography textAlign="center">
+            <Link to="/archive">Arkisto</Link>
+          </Typography>
         </MenuItem>
       </Menu>
     </Box>
