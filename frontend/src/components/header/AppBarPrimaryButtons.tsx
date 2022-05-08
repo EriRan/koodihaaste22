@@ -9,7 +9,7 @@ export function AppBarPrimaryButtons() {
   return (
     <Container maxWidth="xl">
       <Link to="/votes">Äänet</Link>
-      <Link to="/restaurants">Ravintolat</Link>
+      <Link to="/">Ravintolat</Link>
     </Container>
   )
 }

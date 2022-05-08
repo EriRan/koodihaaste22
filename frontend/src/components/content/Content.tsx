@@ -7,7 +7,7 @@ import { VotesContent } from './votes/VotesContent'
 export function Content() {
   return (
     <Routes>
-      <Route path="restaurants" element={<RestaurantContent />} />
+      <Route index element={<RestaurantContent />} />
       <Route path="votes" element={<VotesContent />} />
       <Route path="archive" element={<ArchiveContent />} />
       <Route path="*" element={<NoContent />} />
