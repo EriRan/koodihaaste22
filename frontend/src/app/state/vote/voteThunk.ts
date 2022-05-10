@@ -1,10 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import axios, { AxiosError } from 'axios'
-import { VoteResult } from 'src/app/model/VoteResult.model'
+import { VoteResponse } from 'src/app/model/VoteResponse.model'
 import { RootState } from 'src/app/store'
 
 export const getCurrentDayVotes = createAsyncThunk<
-  VoteResult,
+  VoteResponse,
   void,
   {
     state: RootState
@@ -13,7 +13,7 @@ export const getCurrentDayVotes = createAsyncThunk<
   return axios
     .get(`http://localhost:8080/api/v1/results`)
     .then(apiResponse => {
-      return apiResponse.data as VoteResult
+      return apiResponse.data as VoteResponse
     })
     .catch(error => {
       const castedError = error as Error | AxiosError

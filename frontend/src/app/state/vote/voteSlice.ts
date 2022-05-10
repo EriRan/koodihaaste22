@@ -1,12 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { VoteResult } from 'src/app/model/VoteResult.model'
+import { VoteResponse } from 'src/app/model/VoteResponse.model'
 import { RootState } from 'src/app/store'
 import { getCurrentDayVotes } from './voteThunk'
 
 interface VoteState {
   archiveDateQuery?: string
-  votingResult?: VoteResult
-  archiveVotingResult?: VoteResult
+  votingResult?: VoteResponse
+  archiveVotingResult?: VoteResponse
 }
 
 const initialState: VoteState = {
