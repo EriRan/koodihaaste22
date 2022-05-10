@@ -8,7 +8,7 @@ export function VotesContent() {
 
   useEffect(() => {
     dispatch(getCurrentDayVotes())
-  }, [])
+  }, [dispatch])
 
   const voteResult = useAppSelector(selectVoteResult)
 
