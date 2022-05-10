@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { VotingResult } from 'src/app/model/VotingResult.model'
+import { RootState } from 'src/app/store'
 import { getCurrentDayVotes } from './voteThunk'
 
 interface VoteState {
@@ -29,5 +30,7 @@ export const voteSlice = createSlice({
     })
   },
 })
+
+export const selectVoteResult = (state: RootState) => state.vote.votingResult
 
 export default voteSlice.reducer
