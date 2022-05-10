@@ -28,6 +28,7 @@ export const postVote = createAsyncThunk<
     state: RootState
   }
 >('vote/postVote', async (restaurantId: string, thunkAPI) => {
+  // TODO: Attach voter cookie here
   return axios
     .post(`http://localhost:8080/api/v1/vote/${restaurantId}`)
     .then(apiResponse => {

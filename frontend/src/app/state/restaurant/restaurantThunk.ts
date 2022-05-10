@@ -21,6 +21,7 @@ export const getRestaurantResponse = createAsyncThunk<
   return axios
     .get(`http://localhost:8080/api/v1/restaurants/${citySearchQuery}`)
     .then(apiResponse => {
+      // TODO: Get the voter id cookie here and set it to browser
       return apiResponse.data as RestaurantResponse
     })
     .catch(error => {
