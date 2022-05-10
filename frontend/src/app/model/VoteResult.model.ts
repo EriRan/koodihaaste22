@@ -1,6 +1,6 @@
 import { RestaurantVotes } from './RestaurantVotes.model'
 
-export type VotingResult = {
+export type VoteResult = {
   date: string
   results: RestaurantVotes[]
 }
