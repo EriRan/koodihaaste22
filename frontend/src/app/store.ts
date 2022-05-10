@@ -2,10 +2,12 @@
 
 import { configureStore } from '@reduxjs/toolkit'
 import restaurantSlice from './state/restaurant/restaurantSlice'
+import voteSlice from './state/vote/voteSlice'
 
 export const store = configureStore({
   reducer: {
     restaurant: restaurantSlice,
+    vote: voteSlice,
   },
 })
 
