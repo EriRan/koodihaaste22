@@ -19,7 +19,12 @@ export const getRestaurantResponse = createAsyncThunk<
   }
   // Todo: separate API class?
   return axios
-    .get(`http://localhost:8080/api/v1/restaurants/${citySearchQuery}`)
+    .get(`http://localhost:8080/api/v1/restaurants/${citySearchQuery}`, {
+      headers: {
+        'Access-Control-Allow-Origin': 'http://localhost:8080',
+        'Access-Control-Allow-Credentials': true,
+      },
+    })
     .then(apiResponse => {
       // TODO: Get the voter id cookie here and set it to browser
       return apiResponse.data as RestaurantResponse

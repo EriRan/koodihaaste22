@@ -11,7 +11,12 @@ export const getCurrentDayVotes = createAsyncThunk<
   }
 >('vote/getCurrentDayVotes', async (_unused, thunkAPI) => {
   return axios
-    .get(`http://localhost:8080/api/v1/results`)
+    .get(`http://localhost:8080/api/v1/results`, {
+      headers: {
+        'Access-Control-Allow-Origin': 'http://localhost:8080',
+        'Access-Control-Allow-Credentials': true,
+      },
+    })
     .then(apiResponse => {
       return apiResponse.data as VoteResponse
     })
@@ -30,7 +35,12 @@ export const postVote = createAsyncThunk<
 >('vote/postVote', async (restaurantId: string, thunkAPI) => {
   // TODO: Attach voter cookie here
   return axios
-    .post(`http://localhost:8080/api/v1/vote/${restaurantId}`)
+    .post(`http://localhost:8080/api/v1/vote/${restaurantId}`, undefined, {
+      headers: {
+        'Access-Control-Allow-Origin': 'http://localhost:8080',
+        'Access-Control-Allow-Credentials': true,
+      },
+    })
     .then(apiResponse => {
       console.log(apiResponse.status)
     })
