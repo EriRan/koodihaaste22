@@ -1,12 +1,16 @@
 import { Grid, IconButton, TextField } from '@mui/material'
-import { useAppDispatch } from 'src/app/hooks'
-import { changeSearchQuery } from 'src/app/state/restaurant/restaurantSlice'
+import { useAppDispatch, useAppSelector } from 'src/app/hooks'
+import {
+  changeSearchQuery,
+  selectCitySearchQuery,
+} from 'src/app/state/restaurant/restaurantSlice'
 import { getRestaurantResponse } from 'src/app/state/restaurant/restaurantThunk'
 import SearchIcon from '@mui/icons-material/Search'
 import React from 'react'
 
 export function CityInput() {
   const dispatch = useAppDispatch()
+  const citySearchQuery = useAppSelector(selectCitySearchQuery)
 
   const loadRestaurants = () => {
     dispatch(getRestaurantResponse())
@@ -24,6 +28,7 @@ export function CityInput() {
         id="city-input"
         label="Kaupungin nimi..."
         variant="outlined"
+        value={citySearchQuery}
         onChange={event => dispatch(changeSearchQuery(event.target.value))}
         onKeyDown={handleOnKeyDown}
       />
