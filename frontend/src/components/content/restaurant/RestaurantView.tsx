@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, Typography } from '@mui/material'
+import { Box, Button, Card, CardContent, Grid, Typography } from '@mui/material'
 import { useAppSelector } from 'src/app/hooks'
 import { selectRestaurantResponse } from 'src/app/state/restaurant/restaurantSlice'
 import { OpeningHoursGrid } from './OpeningHoursGrid'
@@ -10,16 +10,21 @@ export function RestaurantView() {
     return (
       <Card id={`restaurant-${restaurant.id}`}>
         <CardContent>
-          <Typography variant="h4" id={`restaurant-${restaurant.id}-name`}>
-            {restaurant.name}
-          </Typography>
-          <OpeningHoursGrid
-            id={`restaurant-${restaurant.id}-votes`}
-            openingHours={restaurant.openingHours}
-          />
-          <Typography id={`restaurant-${restaurant.id}-votes`}>
-            Ääniä: {restaurant.votes}
-          </Typography>
+          <Grid container columns={12}>
+            <Grid xs={10}>
+              <Typography variant="h4" id={`restaurant-${restaurant.id}-name`}>
+                {restaurant.name}
+              </Typography>
+              <OpeningHoursGrid
+                id={`restaurant-${restaurant.id}-votes`}
+                openingHours={restaurant.openingHours}
+              />
+              <Typography id={`restaurant-${restaurant.id}-votes`}>
+                Ääniä: {restaurant.votes}
+              </Typography>
+            </Grid>
+            <Button variant="contained">VOTE</Button>
+          </Grid>
         </CardContent>
       </Card>
     )
